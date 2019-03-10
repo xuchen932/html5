@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas绘制图片</title>
+</head>
+<body>
+    <!-- 画布 -->
+    <canvas id="myCanvas" width="850" height="400"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        // 画笔
+        var ctx = canvas.getContext("2d");
+        var img = new Image();
+
+        ctx.fillStyle = "#2c3e50";
+        ctx.fillRect(0, 0, 850, 400);
+
+        img.src = "smileFace.png";
+        img.width = "20px";
+        img.onload = function () {    // 这里注意图片需加载完毕才会显示
+            // ctx.restore();
+            ctx.drawImage(img, 80, 140, 170, 170);
+        }
+        // ctx.save();
+        // ctx.rotate(5*Math.PI/180); 
+        
+        //填充文字
+        ctx.fillStyle = "#fff";
+        ctx.font = '48px georgia';
+        ctx.fillText("This is a Canvas", 250, 200);
+        ctx.font = '21px georgia';
+        ctx.fillText("Happiness is a way station between too much and too little", 250, 250);
+        ctx.rotate(5*Math.PI/180); // 这里只有图片旋转的原因是，只有在本语句之后添加的元素才会被旋转，
+                                   // 而且img加载的慢，虽然drawImage在前面，但实际上是在本语句后面加载的,
+                                   // 解决方法，就是加上save和restore
+    
+    </script>
+</body>
+</html>

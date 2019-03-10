@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>三角图标</title>
+    <style>
+      body {
+          background: #d4676a;
+          margin: 50px;
+          font-family: sans-serif;
+      } 
+      article {
+          background: #fff;
+          border-radius: 4px;
+          padding: 20px 40px;
+          width: 400px;
+          box-shadow: 5px 7px 1px rgba(0,0,0,.2);
+          position: relative;
+          margin: 30px auto;
+      } 
+      article h1 {
+          color: #d4676a;
+      }
+      article p {
+          color: #666;
+      }
+      article::after {
+          content: "";
+          position: absolute;
+          bottom: -40px;
+          width: 0;
+          height: 0;
+          border-width: 20px;
+          border-style: solid;
+          border-color: #fff transparent transparent transparent;
+      }
+      .triangleShadow {
+          background:transparent;
+          height: 40px;
+          width: 40px;
+          display: inline-block;
+          position: absolute;
+          left: 40px;
+          bottom: -20px;
+          transform: rotate(45deg) scale(0.732,0.732);
+          box-shadow: 5px 3px 1px rgba(0,0,0,.2);
+      }
+    
+    
+    </style>
+</head>
+<body>
+    <article>
+        <h1>This Is Title</h1>
+        <p>
+            This is content This is content This is content 
+            This is content This is content This is content 
+            This is content This is content This is content 
+            This is content This is content This is content 
+            This is content This is content This is content
+        </p>
+        <div class="triangleShadow"></div>
+    </article>
+    <article>
+            <h1>This Is Title</h1>
+            <p>
+                This is content This is content This is content 
+                This is content This is content This is content 
+                This is content This is content This is content 
+                This is content This is content This is content 
+                This is content This is content This is content
+            </p>
+        </article>
+</body>
+</html>

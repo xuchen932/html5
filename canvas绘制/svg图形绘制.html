@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>svg图形绘制</title>
+    <style>
+        /* *{
+            margin: 0px;
+            padding: 0px;
+        } */
+        #myRect1 {
+            fill: #e74c3c;
+        }
+        #myRect2 {
+            fill: #c0392b;
+        }
+        #myCircle {
+            fill: #2ee4bf;
+            stroke: #3a3f3a;
+            stroke-width: 10px;
+        }
+        #myPolygon {
+            fill: #08c3f1;
+            stroke: blue;
+        }
+    
+    
+    </style>
+</head>
+<body>
+    <svg height="1000px" width="1000px">
+        <rect id="myRect1" height="100px" width="200px">矩形</rect>
+        <!-- x为X轴位移量，y为Y轴位移量 -->
+        <rect id="myRect2" height="100px" width="100px" y="150px" x="100px"></rect>
+
+        <!-- cx为圆心横坐标，cy为圆心纵坐标 -->
+        <circle id="myCircle" cx="100" cy="350" r="50" ></circle>
+
+        <polygon id="myPolygon" points="100,450,200,450,200,750,0,550">制作多边型</polygon>
+    </svg>
+
+
+</body>
+</html>

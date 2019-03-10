@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>像素控制</title>
+</head>
+<body>
+    <canvas id="myCanvas"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        
+        canvas.setAttribute('width', '800');
+        canvas.setAttribute('height', '500');
+
+        var img = new Image();
+        img.src = "沙滩.jpeg";
+        img.onload = function () {
+            ctx.drawImage(img, 0, 0, 800, 500);
+
+            //获取图的像素字节数据，是一个对象，img里面的data属性是一个数组
+            //注意getImageData这里涉及跨域问题
+            img = ctx.getImageData(0, 0, 800, 500);
+            
+            // 获取每一个像素点的rgba
+            var picLength = 800 * 500;            
+            for (var i = 0; i < picLength * 4; i += 4) {
+                var oRed = img.data[i]; //每四个数为一组，表示一个像素，第一个数是红色
+                var oGreen = img.data[i + 1]; // 第二个数是绿色
+                var oBlue = img.data[i + 2];  // 第三个数是蓝色
+                var oAlpha = img.data[i + 3];  // 第四个数是透明度
+            }
+            
+            for (var i = 0; i < picLength * 4; i += 4) {
+                var grey = parseInt((oRed + oBlue + oGreen) / 3);
+                img.data[i] = grey; 
+                img.data[i + 1] = grey; 
+                img.data[i + 2] = grey; 
+            }
+            //重新绘制像素点
+            ctx.putImageData(img, 0, 0);
+        }
+
+
+    
+    
+    
+    </script>
+</body>
+</html>

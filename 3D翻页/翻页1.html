@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>翻页1</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .book {
+            width: 300px;
+            margin: 0 auto;
+            position: relative;
+            perspective: 1500px; /*设置观察者到z=0平面的距离*/
+            transform-style: preserve-3d;/*产生3d透视效果*/
+            transform: rotateX(10deg);
+        }
+        li {
+            position: absolute;
+            font-size: 0;
+            width: 300px;
+            height: 400px;
+            box-shadow: inset 0px 0px 2px rgba(0, 0, 0, .1);
+            backface-visibility: hidden;
+            transition: transform 2s; 
+        }
+        .cover {
+            background: url("cover.jpg") no-repeat;
+            background-size: 100% 100%; /*contain 包含， cover 覆盖*/
+            z-index: 0;
+            transform-origin: left center;  /*旋转原点*/
+        }
+        .page1 {
+            background: url("小埋1.jpg") no-repeat;
+            background-size: 100% 100%; /*contain 包含， cover 覆盖*/
+            left: -300px;
+            z-index: -1;
+            transform: rotateY(180deg);
+            transform-origin: right center;
+        }
+        .page2 {
+            background: url("小埋2.jpg") no-repeat;
+            background-size: 100% 100%; /*contain 包含， cover 覆盖*/
+            z-index: -2;
+            transform-origin: left;
+        }
+        .page3 {
+            background: url("小埋3.jpg") no-repeat;
+            background-size: 100% 100%; /*contain 包含， cover 覆盖*/
+            left: -300px;
+            z-index: -1;
+            transform: rotateY(180deg);
+            transform-origin: right;
+        }
+        .page4 {
+            background: url("最后一页.jpeg") no-repeat;
+            background-size: 100% 100%; /*contain 包含， cover 覆盖*/
+            z-index: -4; 
+        }
+        .book:hover .cover {
+            transform: rotateY(-180deg);
+        }
+        .book:hover .page1 {
+            transform: rotateY(0deg);
+        }
+        .book:hover .page2 {
+            transform: rotateY(-180deg);
+            transition-delay: 2s;            
+        }
+        .book:hover .page3 {
+            transform: rotateY(0deg);
+            transition-delay: 2s;
+        }
+    </style>
+</head>
+<body>
+    <ul class="book">
+        <li class="cover"></li>
+        <li class="page1"></li>
+        <li class="page2"></li>
+        <li class="page3"></li> 
+        <li class="page4"></li>
+    </ul>
+</body>
+</html>

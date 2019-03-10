@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>SnowEffect</title>
+    <style>
+        #myCanvas {
+            background: rgb(224, 227, 230)
+        }
+    
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="1110" height="600"></canvas>
+    <script type="text/javascript">
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+        var particles = [];
+
+        for (var i = 0; i < 500; i++) {
+            particles.push({//设置当前雪花的出现位置以及速度，大小
+                x: Math.random() * window.innerWidth,//显示当前窗口的宽度
+                y: Math.random() * window.innerHeight,
+                vx: (Math.random() * 1 - .5),
+                vy: (Math.random() * 1 + .5),
+                size: 1 + Math.random() * 3,
+                color: "#235"
+            })
+        }
+        
+
+        function timeUpdate(e) {
+            context.clearRect(0, 0, window.innerWidth, window.innerHeight) //清除画布区域
+            var particle;
+            for (var i = 0; i < 500; i++) {
+                particle = particles[i];
+                particle.x += particle.vx;// 更新雪花的位置
+                particle.y += particle.vy;
+                if (particle.x < 0) {
+                    particle.x = window.innerWidth; // 当雪花出现在画布左侧以外时，使其定位到画布最右侧
+                }
+                if (particle.x > window.innerWidth) {
+                    particle.x = 0;
+                }
+                if (particle.y >= window.innerHeight) {
+                    particle.y = 0;
+                }
+                context.fillStyle = particle.color; 
+                context.beginPath();  // 开始绘制雪花
+                context.arc(particle.x, particle.y, particle.size, 0 , Math.PI*2);//绘制圆形
+                context.closePath();//闭合路径
+                context.fill();
+            }
+        }
+        setInterval(timeUpdate, 40);
+    
+    </script>
+    
+</body>
+</html>

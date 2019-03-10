@@ -1,0 +1,44 @@
+<style>
+
+某些transition动画在webkit浏览器渲染时，会出现闪动情况，即动画过程中，标题和文字会在粗细上发生变化，
+可以在其父级设置-webkit-transform-style: preserve-3d, 在其本身设置-webkit-backface-visibility: hidden; 
+
+.father {
+    -webkit-transform-style: preserve-3d;
+}
+.son1 {
+    -webkit-backface-visibility: hidden;
+}
+.son2 {
+    -webkit-backface-visibility: hidden;
+}
+
+
+设置背景图片固定不动
+.className {
+    background-attachment: fixed;
+}
+
+设置当鼠标选中区域文字时，去掉文字阴影， 更改背景色
+::selection {
+    text-shadow: none;
+    color: #fff;
+    background-color: #e74c3c;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

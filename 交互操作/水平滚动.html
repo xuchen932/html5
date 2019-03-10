@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        html, body {
+            height: 100%;
+        }
+        body {
+            background: #06c url(bg.jpg) no-repeat;
+            background-size: 100% 100%;
+            margin: 0;
+            padding: 0;
+            color: #555;
+            font-family: "Helvetical Neue", sans-serif;
+            position: relative;
+            background-attachment: fixed; /*固定背景图片*/
+        }
+        #title {
+            position: absolute; /*固定定位*/
+            top: 10%;
+            left: 8%;
+        }
+        .container {
+            position: absolute;
+            bottom: 20%;
+            width: 100%;
+            overflow: auto;
+        }
+        #title h1 {
+            font-size: 56px;
+            text-transform: uppercase;
+        }
+        #title ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #title li {
+            display: inline-block;
+        }
+        #title li a {
+            color: rgb(131, 93, 93);
+            text-decoration: none;
+        }
+        #scroll {
+            width: 3200px; /*这里更改*/
+            height: 200px; 
+            background: rgba(255, 255, 255, .7)
+        }
+       .article {
+           display: block;
+           height: 200px;
+           width: 800px;
+           box-sizing: border-box;
+           padding-left: 30px;
+           float: left;
+       }
+       .article img {
+           margin-right: 20px;
+           float: left;
+           width: 300px;
+           height: 200px;
+       }
+
+    
+    </style>
+</head>
+<body>
+    <div id="title">
+        <h1>The Scroll Effect</h1>
+        <ul>
+            <li><a href="#pic1">Pic1</a></li> <!--这里使用的是a标签的锚点作用，定位到id为pic1的元素-->
+            <li><a href="#pic2">Pic2</a></li>
+            <li><a href="#pic3">Pic3</a></li>
+            <li><a href="#pic4">Pic4</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <div id="scroll">
+            <div class="article" id="pic1">
+                <img src="pic1.jpg" alt="">
+                <h1>Duis volupat</h1>
+                <p>
+                    China and Kazakhstan should enhance the connection of 
+                    their development strategies and boost cooperation in 
+                    such areas as the economy, trade, energy and finance, 
+                    President Xi Jinping said on Thursday.
+                </p>
+            </div>
+            <div class="article" id="pic2">
+                <img src="pic2.jpg" alt="">
+                <h1>Duis volupat</h1>
+                <p>
+                    China and Kazakhstan should enhance the connection of 
+                    their development strategies and boost cooperation in 
+                    such areas as the economy, trade, energy and finance, 
+                    President Xi Jinping said on Thursday.
+                </p>
+            </div>
+            <div class="article" id="pic3">
+                <img src="pic3.jpg" alt="">
+                <h1>Duis volupat</h1>
+                <p>
+                    China and Kazakhstan should enhance the connection of 
+                    their development strategies and boost cooperation in 
+                    such areas as the economy, trade, energy and finance, 
+                    President Xi Jinping said on Thursday.
+                </p>
+            </div>
+            <div class="article" id="pic4">
+                <img src="pic4.jpg" alt="">
+                <h1>Duis volupat</h1>
+                <p>
+                    China and Kazakhstan should enhance the connection of 
+                    their development strategies and boost cooperation in 
+                    such areas as the economy, trade, energy and finance, 
+                    President Xi Jinping said on Thursday.
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

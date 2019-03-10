@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图标绘制1</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+       .container {
+           background: #3ecc71;
+           height: 35px;
+           width: 40px;
+           margin: 20px auto;
+           padding: 5px;
+
+       }
+       .close {
+           font-size: 0;
+           display: block;
+       } 
+       .close::before, .close::after {
+           content: "";
+           width: 40px;
+           height: 2px;
+           background: #fff;
+           display: block;
+       }
+       .close::before {
+           transform: translateY(14px) rotate(45deg); /*注意变换的顺序，一定位移在前，旋转在后*/
+
+       }
+       .close::after {
+           transform: translateY(12px) rotate(-45deg);
+       }
+    
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="close">关闭按钮</span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>加载动画1</title>
+    <style>
+       .container {
+            display:flex;/*居中*/
+            justify-content:center;
+            align-items:center;
+        }
+        .inner {
+            background: burlywood;
+            display: inline-block;
+            padding: 100px;
+        }
+        .loader {
+            font-size: 20px;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            position: relative;
+            text-indent: -9999em;/*1em=font-size*/
+            box-shadow: -3em 2em 0 .5em #fff, 0 2em 0 0 #fff, 3em 2em 0 -.5em #fff;/*x, y, 模糊半径，扩展半径*/
+            animation: load-effect 2s infinite;
+            animation-fill-mode: both;
+        }
+        @keyframes load-effect{
+            0% {
+                box-shadow: -3em 2em 0 .5em #fff, 0 2em 0 0 #fff, 3em 2em 0 -.5em #fff; 
+            }
+            25% {
+                box-shadow: -3em 2em 0 0 #fff, 0 2em 0 .5em #fff, 3em 2em 0 0 #fff;
+            }
+            50% {
+                box-shadow: -3em 2em 0 -.5em #fff, 0 2em 0 0 #fff, 3em 2em 0 .5em #fff;
+            }
+            75% {
+                box-shadow: -3em 2em 0 0 #fff, 0 2em 0 .5em #fff, 3em 2em 0 0 #fff;
+            }
+            100% {
+                box-shadow: -3em 2em 0 .5em #fff, 0 2em 0 0 #fff, 3em 2em 0 -.5em #fff;
+            }
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner">
+            <div class="loader">Loading.....</div>
+        </div>    
+    </div>
+</body>
+</html>

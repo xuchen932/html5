@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图标动画1</title>
+
+    <style>
+         @font-face {
+            font-family: 'iconfont';
+            src: url('./iconfont1/iconfont.eot');
+            src: url('./iconfont1/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('./iconfont1/iconfont.woff') format('woff'),
+            url('./iconfont1/iconfont.ttf') format('truetype'),
+            url('./iconfont1/iconfont.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:30px;
+            font-style:normal;
+            display: inline-block;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .close {
+            font-size: 0px;/*让span的文字不显示*/
+            cursor: pointer;/*让鼠标变成小手*/
+            display: block;
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            border-radius: 50%;
+            color: #8b8ab3;
+            background: #fff;
+            text-align: center;
+        }
+        .close::before {
+            content: "\e88c";
+            font-family: 'iconfont';
+            speak: none;/*使文本内容不能被阅读器等辅助设备读取*/
+            font-size: 48px;
+            display: block;
+        }
+        .close:hover::before {
+            transform: rotate(360deg);
+            transition: transform 1s linear;
+        }
+    
+    
+    
+    
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="close">Close</span>
+    </div>
+</body>
+</html>

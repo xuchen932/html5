@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>按钮动画2</title>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('./iconfont1/iconfont.eot');
+            src: url('./iconfont1/iconfont.eot?#iefix') format('embedded-opentype'),
+            url('./iconfont1/iconfont.woff') format('woff'),
+            url('./iconfont1/iconfont.ttf') format('truetype'),
+            url('./iconfont1/iconfont.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:30px;
+            font-style:normal;
+            display: inline-block;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .container {
+            background:#d53ea4;
+            display: inline-block;
+            padding: 10px 25px
+        }
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-family: sans-serif;
+            font-size: 34px;
+            transition: all 1.5s ease .5s;
+            display: inline-block;
+            width: 400px;
+            height: 60px;
+            line-height: 60px;
+            border: 1px solid #fff;
+            border-radius: 8px;
+            box-sizing: border-box;
+            padding-left: 140px;
+            position: relative;
+        }
+        a::after {
+            font-family: 'iconfont';
+            content: '\e783';
+            position: absolute;
+            right: 85%;
+            color: #fff;
+            transition: all 1.5s linear .5s;
+        }
+        a:hover {
+            color: #d53ea4;
+            background: #fff;
+            padding-left: 20px;
+        }
+        a:hover::after {
+            right: 5%;
+            color: #d53ea4;            
+        }   
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="">This is a link </a>
+    </div>
+</body>
+</html>
